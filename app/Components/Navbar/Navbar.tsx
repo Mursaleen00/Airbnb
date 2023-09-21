@@ -3,8 +3,16 @@ import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
+import { safeUser } from "@/app/Types/intex";
 
-function Navbar() {
+interface NavbarProps {
+  currentUser?: safeUser | null;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  currentUser,
+}) => {
+
   return (
     <div className="fixed w-full bg-white shadow-sm">
       <div className="py-4 border-b-[1px]">
@@ -19,7 +27,7 @@ function Navbar() {
           >
             <Logo />
             <Search />
-            <UserMenu />
+            <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
