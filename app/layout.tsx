@@ -24,7 +24,6 @@ export default async function RootLayout({
 
   const currentUser = await getCurrentUser();
 
-  
   return (
     <html lang="en">
       <body className={font.className}>
@@ -32,7 +31,7 @@ export default async function RootLayout({
           <ToasterProvider />
           <LoginModal />
           <ResigterModal />
-          <Navbar currentUser={currentUser}/>
+          <Navbar />
         </ClientOnly>
         {children}
       </body>
