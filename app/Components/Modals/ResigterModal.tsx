@@ -1,10 +1,11 @@
 "use client";
 import axios from 'axios';
 import { useCallback, useState } from 'react'
+import useRegisterModal from '@/app/Hooks/useRegisterModal';
+import useLoginModal from '@/app/Hooks/useLoginModal';
 import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import { FieldValues, useForm, SubmitHandler } from 'react-hook-form'
-import useRegisterModal from '@/app/Hooks/useRegisterModal';
 import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../Inputs/Input';
@@ -15,6 +16,8 @@ import { signIn } from "next-auth/react"
 
 const ResigterModal = () => {
     const registerModal = useRegisterModal();
+    const loginModal = useLoginModal()
+
     const [isLoding, setIsLoding] = useState(false);
     const {
         register,
@@ -44,6 +47,12 @@ const ResigterModal = () => {
                 setIsLoding(false);
             })
     }
+
+    const toggle = useCallback(() => {
+        registerModal.onClose();
+        loginModal.onOpen();
+    }, [loginModal, registerModal])
+
 
     const bodyContent = (
         <div className='flex flex-col gap-4'>
@@ -105,7 +114,7 @@ const ResigterModal = () => {
                         Already have an account?
                     </div>
                     <div
-                        onClick={registerModal.onClose}
+                        onClick={toggle}
                         className='text-neutral-800 cursor-pointer hover:underline'>
                         Log in
                     </div>

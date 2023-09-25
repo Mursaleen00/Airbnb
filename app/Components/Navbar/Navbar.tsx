@@ -1,10 +1,19 @@
+"use clint";
 import React from "react";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
+import { safeUser } from "@/app/Types/intex";
+import Categories from "./Categories";
 
-function Navbar() {
+interface NavebarProps {
+  currentUser?: safeUser | null;
+}
+
+const Navbar: React.FC<NavebarProps> = ({
+  currentUser,
+}) => {
   return (
     <div className="fixed w-full bg-white shadow-sm" >
       <div className="py-4 border-b-[1px]">
@@ -19,10 +28,11 @@ function Navbar() {
           >
             <Logo />
             <Search />
-            <UserMenu />
+            <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
+      <Categories />
     </div >
   );
 }
