@@ -4,16 +4,17 @@ import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
-import { safeUser } from "@/app/Types/intex";
 import Categories from "./Categories";
+import { user } from "@prisma/client";
 
 interface NavebarProps {
-  currentUser?: safeUser | null;
+  currentUser?: user | null;
 }
 
 const Navbar: React.FC<NavebarProps> = ({
   currentUser,
 }) => {
+
   return (
     <div className="fixed w-full bg-white shadow-sm" >
       <div className="py-4 border-b-[1px]">
