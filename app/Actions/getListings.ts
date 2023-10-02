@@ -5,7 +5,7 @@ export default async function getListing() {
     try {
         const listings = await prisma.listing.findMany({
             orderBy: {
-                creatAt: 'desc'
+                createdAt: 'desc'
             }
         })
 
