@@ -37,7 +37,7 @@ export default async function Home() {
               <ListingCard
                 // currentUser={currentUser}
                 key={listings.id}
-              data={listings}
+                data={listings}
               />
             )
           })}
