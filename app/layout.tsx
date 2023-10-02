@@ -36,6 +36,9 @@ export default async function RootLayout({
           <ResigterModal />
           <Navbar currentUser={currentuser} />
         </ClientOnly>
+        <div className="pb-20 pt-28">
+          
+        </div>
         {children}
       </body>
     </html>

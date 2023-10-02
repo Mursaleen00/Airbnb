@@ -49,11 +49,11 @@ const RentModal = () => {
             location: null,
             guestCount: 1,
             roomCount: 1,
-            bathRoomCount: 1,
+            bathroomCount: 1,
             imageSrc: '',
             price: 1,
             title: '',
-            description: ""
+            description: "",
         }
     })
 
@@ -61,7 +61,7 @@ const RentModal = () => {
     const location = watch('location');
     const guestCount = watch('guestCount');
     const roomCount = watch('roomCount');
-    const bathRoomCount = watch('bathRoomCount');
+    const bathroomCount = watch('bathroomCount');
     const imageSrc = watch("imageSrc");
 
 
@@ -198,8 +198,8 @@ const RentModal = () => {
                 <Counter
                     title="Bathrooms"
                     subTitle="How many Bathrooms do you have?"
-                    value={bathRoomCount}
-                    onChange={(value) => setCustomValue("bathRoomCount", value)}
+                    value={bathroomCount}
+                    onChange={(value) => setCustomValue("bathroomCount", value)}
                 />
             </div>
         )
@@ -241,8 +241,8 @@ const RentModal = () => {
                 />
                 <hr />
                 <Input
-                    label="description"
-                    id="Description"
+                    id="description"
+                    label="Description"
                     disabled={isLoading}
                     register={register}
                     errors={errors}

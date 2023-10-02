@@ -1,0 +1,17 @@
+import prisma from '@/app/libs/prismadb'
+
+
+export default async function getListing() {
+    try {
+        const listings = await prisma.listing.findMany({
+            orderBy: {
+                creatAt: 'desc'
+            }
+        })
+
+        return listings;
+    }
+    catch (error: any) {
+        throw new Error(error)
+    }
+}
