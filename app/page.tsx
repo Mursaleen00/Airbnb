@@ -22,7 +22,7 @@ export default async function Home() {
     <ClientOnly>
       <Container>
         <div className="
-        pt-24 
+        pt-10 
         grid 
         grid-cols-1
         sm:grid-cols-2
