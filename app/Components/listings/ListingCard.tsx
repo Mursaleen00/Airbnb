@@ -1,5 +1,5 @@
 'use client';
-import { Listing, Reservation } from '@prisma/client'
+import { Listing, Reservation, User } from '@prisma/client'
 import { useRouter } from "next/navigation";
 
 
@@ -120,7 +120,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
                 {onAction && actionLable && (
                     <Button
                         disabled={disabled}
-                        small 
+                        small
                         label={actionLable}
                         onClick={handleCancel}
                     />

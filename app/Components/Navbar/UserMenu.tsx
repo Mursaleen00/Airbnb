@@ -8,11 +8,11 @@ import { signOut } from "next-auth/react";
 import useRegisterModal from "@/app/Hooks/useRegisterModal";
 import useLoginModal from "@/app/Hooks/useLoginModal";
 import useRentModal from "@/app/Hooks/useRectModal";
-import { User } from "@prisma/client";
+import { safeUser } from "@/app/Types";
 
 
 interface UserMenuProps {
-  currentUser?: User | null;
+  currentUser?: safeUser | null;
 }
 
 
