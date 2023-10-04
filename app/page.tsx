@@ -6,9 +6,8 @@ import EmptyState from "./Components/EmptyState";
 import ListingCard from "./Components/listings/ListingCard";
 
 export default async function Home() {
-  const listings = await getListing()
-  const currentUser = await getCurrentUser()
-  const isEmpty = true;
+  const listings = await getListing();
+  const currentUser = await getCurrentUser();
 
   if (listings.length == 0) {
     return (
@@ -32,7 +31,7 @@ export default async function Home() {
         2xl:grid-cols-6
         gap-8
         ">
-          {listings.map((listings: any) => {
+          {listings.map((listings) => {
             return (
               <ListingCard
                 currentUser={currentUser}
